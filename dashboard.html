@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Écologique - Seconde Main</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header>
+        <img src="C:\Users\Thibault\Pictures\Petit-Bateau-Logo-2000 (1).png" alt="Logo">
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="dashboard.html">Impact écologique</a>
+        </nav>
+    </header>
+
+    <div class="dashboard">
+        <h2>Impact de la Seconde Main sur l'Écologie</h2>
+
+        <!-- Image illustrant l'impact écologique -->
+        <div class="impact-image">
+            <img src="C:\Users\Thibault\Pictures\AAA.png" alt="Réaction des Français à la Seconde Main">
+        </div>
+
+        <!-- Section des graphiques -->
+        <div class="charts">
+            <!-- Premier graphique -->
+            <div class="chart">
+                <h3>Réaction des Français</h3>
+                <canvas id="chart1"></canvas>
+            </div>
+
+            <!-- Deuxième graphique -->
+            <div class="chart">
+                <h3>Économie circulaire</h3>
+                <canvas id="chart2"></canvas>
+            </div>
+
+            <!-- Troisième graphique -->
+            <div class="chart">
+                <h3>Émissions CO2 évitées</h3>
+                <canvas id="chart3"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Seconde Main - Tous droits réservés</p>
+    </footer>
+
+    <!-- Scripts pour les graphiques -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Graphique 1
+        var ctx1 = document.getElementById('chart1').getContext('2d');
+        var chart1 = new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                datasets: [{
+                    label: 'Réaction des Français',
+                    data: [12, 19, 3, 5, 2],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Graphique 2
+        var ctx2 = document.getElementById('chart2').getContext('2d');
+        var chart2 = new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: ['Réutilisation', 'Recyclage', 'Réduction', 'Autres'],
+                datasets: [{
+                    data: [15, 35, 25, 25],
+                    backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(153, 102, 255, 0.2)'],
+                    borderColor: ['rgba(255, 99, 132, 1)', 'rgba(75, 192, 192, 1)', 'rgba(255, 159, 64, 1)', 'rgba(153, 102, 255, 1)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+
+        // Graphique 3
+        var ctx3 = document.getElementById('chart3').getContext('2d');
+        var chart3 = new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: ['2020', '2021', '2022', '2023', '2024'],
+                datasets: [{
+                    label: 'Émissions CO2 évitées',
+                    data: [100, 150, 175, 200, 220],
+                    fill: false,
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
+</body>
+</html>
